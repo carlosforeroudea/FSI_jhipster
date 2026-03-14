@@ -118,5 +118,5 @@ Las migraciones de esquema se gestionan con Liquibase (src/main/resources/config
 
 ## Repositorio
 
-GitHub: https://github.com/Carlosclab/fsi-lab01.git
+GitHub: https://github.com/carlosforeroudea/FSI_jhipster
 # FSI_jhipster
