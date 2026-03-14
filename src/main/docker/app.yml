@@ -1,0 +1,23 @@
+name: aerolineavirtual
+services:
+  app:
+    image: aerolineavirtual
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_PROMETHEUS_METRICS_EXPORT_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://31.97.208.109:3306/u908848582_fsi?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_LIQUIBASE_URL=jdbc:mysql://31.97.208.109:3306/u908848582_fsi?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=u908848582_fsi
+      - SPRING_DATASOURCE_PASSWORD=Vojhyf-qathi9-fisgyx
+    ports:
+      - 127.0.0.1:8080:8080
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:8080/management/health
+      interval: 5s
+      timeout: 5s
+      retries: 40
